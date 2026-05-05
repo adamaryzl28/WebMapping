@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <title>University of Oregon Mapping</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!--    Include the reference to the Mapbox JavaScript here in the <head> of the page  (Part I.1)  -->
+    <!-- <script src = "https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script> -->
+    <script src ='https://api.tiles.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js'></script>
+
+
+          
+    <!--    Include the reference to the Mapbox CSS here in between <head> tags    (Part I.2) -->
+    <!-- <link href = "https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel ="stylesheet"> -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css' rel='stylesheet' />
+
+
+    <style>
+        /* style for map elements*/
+      body { margin:0; padding:0; }
+      #map { position:absolute; top:0; bottom:0; width:100%; }
+      #TitleBanner{ position: absolute; top: 10; color:gold;}
+
+    </style>
+  </head>
+
+  <body>
+    <!--  Map #1-->
+    <div id = 'map'> </div>
+    <!--  optional Title Header -->
+    <div id = 'TitleBanner'>
+      <h1> Temperature Changes Across America by Counties</h1>
+    </div>
+    <script>
+        //map access token
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbG4iLCJhIjoiY2xnNWVkdWc0MDJrYjNmbGpicWxkdDYxNyJ9.XsjiYDAp6WyIGLRJZQVwuw'; 
+
+   
+        // map initlization,area to highlight(USA)
+      var map = new mapboxgl.Map({
+         container: 'map', // container id for styling
+         style: 'mapbox://styles/adaln/cmoib91gw000t01si53dkecnk', // stylesheet link mapbox
+         center: ['-97.5348', '38.7946'], //centered to the US
+         zoom: 4,
+     });
+
+        // optional: zoom controls top right
+      const nav = new mapboxgl.NavigationControl();
+      map.addControl(nav, 'top-right');
+        // Add popups for markers here. Yes, before the markers!  (part IV)
+        
+        // Add any other variables such as markers here (part III)
+
+        // Add optional advanced "On load" function here
+        
+    </script>
+
+  </body>
+
+</html>
